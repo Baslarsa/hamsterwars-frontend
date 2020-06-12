@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, NavLink, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import RecentGames from "./components/RecentGames"
 import Start from "./components/Start"
 import Charts from "./components/Charts"
-import Battle from "./components/Battle"
+import Battle from "./components/battle/Battle"
+import CustomBattle from "./components/battle/CustomBattle"
 import Hamsters from "./components/Hamsters"
 import './App.css';
 
@@ -26,9 +27,9 @@ function App() {
             </Switch>
             <main>
                 <Switch>
+                    <Route path="/battle/:id1/:id2" children={<CustomBattle />} />
                     <Route path="/recent-games"> <RecentGames /></Route>
                     <Route path="/battle"> <Battle /></Route>
-
                     <Route path="/charts"> <Charts /></Route>
                     <Route path="/hamsters"> <Hamsters /></Route>
                     <Route path="/"> <Start /></Route>
