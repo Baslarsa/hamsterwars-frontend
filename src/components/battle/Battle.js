@@ -19,7 +19,6 @@ const CustomBattle = (props) => {
             }
         });
         let jsonHamsterOne = await getRandomHamsterOne.json();
-        console.log(jsonHamsterOne)
 
         const getRandomHamsterTwo = await fetch(url, {
             headers: {
@@ -27,8 +26,6 @@ const CustomBattle = (props) => {
             }
         });
         let jsonHamsterTwo = await getRandomHamsterTwo.json();
-        console.log(jsonHamsterTwo)
-
 
         setHamsterOne(jsonHamsterOne)
         setHamsterTwo(jsonHamsterTwo)
@@ -40,6 +37,29 @@ const CustomBattle = (props) => {
     async function handleVoteClick(winner, loser) {
         let winnerUrl = `http://localhost:4000/hamsters/${winner.id}/win`
         let loserUrl = `http://localhost:4000/hamsters/${loser.id}/defeat`
+        //Update Hamsters DB
+        let postGameUrl = "http://localhost:4000/games/";
+        let dataToSend = JSON.stringify({
+            contestants: [winner, loser],
+            winner: winner
+        });
+        let post = await fetch(postGameUrl,
+            {
+                method: 'POST',
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    'authorization': 'AIzaSyAHFQEHkjdigK1SGrYLAxpKNiEG4j9pmKs'
+                }),
+                body: JSON.stringify(
+                    {
+                        contestants: [winner, loser],
+                        winner: winner
+                    }
+                )
+            })
+
+        const content = await post.json()
+        console.log(content)
 
         let updateWinnerDb = await fetch(winnerUrl, {
             headers: {
@@ -56,6 +76,8 @@ const CustomBattle = (props) => {
             method: 'PUT'
         })
         let resLoserJson = await updateLoserDb.json()
+        //Update recent games
+
         setWinningHamster(winner.name)
         setHamsters();
         console.log(resWinnerJson, resLoserJson)
@@ -77,6 +99,7 @@ const CustomBattle = (props) => {
                         <div className="battle-corner">
                             <button className="vote-button" onClick={() => handleVoteClick(hamsterOne, hamsterTwo)}>Vote for {hamsterOne.name}</button>
                             <Fighters
+                                class="fighter"
                                 name={hamsterOne.name}
                                 age={hamsterOne.age}
                                 imgName={hamsterOne.imgName}
@@ -89,6 +112,7 @@ const CustomBattle = (props) => {
                         <div className="battle-corner">
                             <button className="vote-button" onClick={() => handleVoteClick(hamsterTwo, hamsterOne)}>Vote for {hamsterTwo.name}</button>
                             <Fighters
+                                class="fighter"
                                 name={hamsterTwo.name}
                                 age={hamsterTwo.age}
                                 imgName={hamsterTwo.imgName}

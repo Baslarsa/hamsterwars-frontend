@@ -6,6 +6,7 @@ import Charts from "./components/Charts"
 import Battle from "./components/battle/Battle"
 import CustomBattle from "./components/battle/CustomBattle"
 import Hamsters from "./components/Hamsters"
+import Upload from "./components/Upload"
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                         <NavLink to="/recent-games" activeClassName="active">Recent Games </NavLink>
                         <NavLink to="/charts" activeClassName="active">Charts</NavLink>
                         <NavLink to="/hamsters" activeClassName="active">Hamsters</NavLink>
+                        <NavLink to="/upload" activeClassName="active">Upload Hamster</NavLink>
                     </nav>
                 </Route>
             </Switch>
@@ -32,6 +34,7 @@ function App() {
                     <Route path="/battle"> <Battle /></Route>
                     <Route path="/charts"> <Charts /></Route>
                     <Route path="/hamsters"> <Hamsters /></Route>
+                    <Route path="/upload"> <Upload /></Route>
                     <Route path="/"> <Start /></Route>
                 </Switch>
             </main>

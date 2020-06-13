@@ -24,7 +24,7 @@ const Fighter = (props) => {
     }, [props])
 
     return (
-        <article className="fighter">
+        <article className={props.class}>
             <img alt="hamster" src={imgUrl} />
             <p>Name: {props.name}</p>
             <p>Age: {props.age}</p>
