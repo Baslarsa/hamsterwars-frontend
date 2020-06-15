@@ -5,7 +5,7 @@ let Start = () => {
     const [topHamster, setTopHamster] = useState([]);
     useEffect(() => {
         async function getTopHamster() {
-            let topUrl = 'http://localhost:4000/charts/top'
+            let topUrl = 'http://localhost:4000/api/charts/top'
 
             const getTopFive = await fetch(topUrl, {
                 method: "GET",
@@ -19,12 +19,11 @@ let Start = () => {
         getTopHamster();
     }, [])
 
-    console.log(topHamster.name)
 
     return (
         <>
             <div className="main-container">
-                <div class="title-box">
+                <div className="title-box">
                     <h1>Welcome to the infamous HamsterWars</h1>
                     <p>Together we will find out which of the hamsters that's the cutest.... Or ugliest, you decide!</p>
                     <p>Choose from the menu above!</p>

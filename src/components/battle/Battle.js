@@ -13,7 +13,7 @@ const CustomBattle = (props) => {
     const [showPopUp, setShowPopup] = useState(false);
 
     async function setHamsters() {
-        const url = 'http://localhost:4000/hamsters/random';
+        const url = 'http://localhost:4000/api/hamsters/random';
 
         const getRandomHamsterOne = await fetch(url, {
             headers: {
