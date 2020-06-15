@@ -1,14 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
 :root {
     --mainBg: rgb(219, 219, 219);
-    --secondaryBg: rgb(182, 146, 146);
+    --secondaryBg: rgb(29, 150, 248);
+    --primaryFont: 'Roboto', sans-serif;
+
 }
 
 .App {
   text-align: center;
 }
-h1 {
+header h1 {
     margin: 0;
     font-size: 2em;
+    font-family: var(--primaryFont);
+    color: white;
+    letter-spacing: 1em;
+    text-decoration: underline;
 }
 header {
     width: 100vw;
@@ -23,7 +31,7 @@ main {
     box-sizing: border-box;
     text-align: center;
     width: 100vw;
-    min-height: 85vh;
+    min-height: 80vh;
     background-color: var(--mainBg);
     box-sizing: border-box;
 }
@@ -37,26 +45,31 @@ main {
     background-color: var(--secondaryBg)
 }
 .nav a {
-    border-radius: 0.5em 0.5em 0 0;
+    border-radius: 1em 1em 0 0;
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
     font-family: arial;
     font-weight: bold;
-    width: 16%;
+    width: 20%;
     display: flex;
     justify-content: center;
+    padding: 1em;
     align-items: center;
+
 }
 .active {
     background-color: var(--mainBg);
 }
+
 .leader-frame {
+    border-radius: 2em;;
+    font-family: var(--primaryFont);
+    font-weight: 300;
     padding: 1em;
+    color: white;
     box-sizing: border-box;
-    margin: auto;
     width: 50%;
-    height: 70%;
-    background-color: rgb(167, 167, 167);
+    background-color: rgba(0, 0, 0, 0.288);
 }
 .upload-form {
     padding: 1em;
@@ -74,7 +87,39 @@ main {
 }
 .wrapper {
     width: 100vw;
-    min-height: 85vh;
+min-height: 85vh;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+}
+.startHamster {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 60vh;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.startHamster p {
+    margin: 0;
+}
+.title-box {
+    padding: 1em;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    width: 30%;
+}
+.main-container {
+    width: 100vw;
+    min-height: 80vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+p {
+    margin: 0;
 }

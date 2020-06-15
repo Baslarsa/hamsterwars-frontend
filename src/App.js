@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
-import RecentGames from "./components/RecentGames"
 import Start from "./components/Start"
-import Charts from "./components/Charts"
+import Charts from "./components/charts/Charts"
 import Battle from "./components/battle/Battle"
 import CustomBattle from "./components/battle/CustomBattle"
 import Hamsters from "./components/Hamsters"
@@ -20,7 +19,6 @@ function App() {
                     <nav className="nav">
                         <NavLink to="/start" activeClassName="active">Start</NavLink>
                         <NavLink to="/battle" activeClassName="active">Battle </NavLink>
-                        <NavLink to="/recent-games" activeClassName="active">Recent Games </NavLink>
                         <NavLink to="/charts" activeClassName="active">Charts</NavLink>
                         <NavLink to="/hamsters" activeClassName="active">Hamsters</NavLink>
                         <NavLink to="/upload" activeClassName="active">Upload Hamster</NavLink>
@@ -30,7 +28,6 @@ function App() {
             <main>
                 <Switch>
                     <Route path="/battle/:id1/:id2" children={<CustomBattle />} />
-                    <Route path="/recent-games"> <RecentGames /></Route>
                     <Route path="/battle"> <Battle /></Route>
                     <Route path="/charts"> <Charts /></Route>
                     <Route path="/hamsters"> <Hamsters /></Route>

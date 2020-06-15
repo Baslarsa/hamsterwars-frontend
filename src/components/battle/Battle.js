@@ -9,6 +9,8 @@ const CustomBattle = (props) => {
     const [hamsterTwo, setHamsterTwo] = useState([])
     const [isHamstersSet, setIsHamstersSet] = useState(false);
     const [winningHamster, setWinningHamster] = useState("");
+    const [losingHamster, setLosingHamster] = useState("");
+    const [showPopUp, setShowPopup] = useState(false);
 
     async function setHamsters() {
         const url = 'http://localhost:4000/hamsters/random';
@@ -33,16 +35,16 @@ const CustomBattle = (props) => {
 
         setIsHamstersSet(true)
     }
-
+    function popUp() {
+        setShowPopup(true);
+        setTimeout(setShowPopup, 5000);
+    }
     async function handleVoteClick(winner, loser) {
         let winnerUrl = `http://localhost:4000/hamsters/${winner.id}/win`
         let loserUrl = `http://localhost:4000/hamsters/${loser.id}/defeat`
         //Update Hamsters DB
         let postGameUrl = "http://localhost:4000/games/";
-        let dataToSend = JSON.stringify({
-            contestants: [winner, loser],
-            winner: winner
-        });
+
         let post = await fetch(postGameUrl,
             {
                 method: 'POST',
@@ -59,7 +61,6 @@ const CustomBattle = (props) => {
             })
 
         const content = await post.json()
-        console.log(content)
 
         let updateWinnerDb = await fetch(winnerUrl, {
             headers: {
@@ -78,17 +79,18 @@ const CustomBattle = (props) => {
         let resLoserJson = await updateLoserDb.json()
         //Update recent games
 
-        setWinningHamster(winner.name)
+        popUp();
+        setWinningHamster(winner)
+        setLosingHamster(loser)
         setHamsters();
-        console.log(resWinnerJson, resLoserJson)
     }
 
     return (
         <>
             <button onClick={setHamsters}>Randomize a battle</button>
             {
-                winningHamster
-                    ? <BattleResult name={winningHamster} />
+                winningHamster && showPopUp
+                    ? <BattleResult winner={winningHamster} loser={losingHamster} />
                     : ""
             }
 

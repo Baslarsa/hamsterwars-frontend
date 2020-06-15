@@ -1,0 +1,46 @@
+.result-box {
+    box-sizing: border-box;
+    padding: 1em;
+    width: 20em;
+    height: 8em;
+    background-color: rgb(29, 150, 248);
+    color: white;
+    position: absolute;
+    bottom: -8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: popUp 5s ease-in-out;
+}
+@keyframes popUp {
+    0% {
+        bottom:-8em;
+    }
+    25% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 0;
+    }
+    70% {
+        bottom: 0;
+    }
+    100% {
+        bottom: -8em;
+    }
+}
+
+.result-box h1 {
+    margin: 0;
+    font-size: 1.5em;
+
+}
+.result-box h2 {
+    margin: 0;
+    font-size: 1.2em;
+
+}
+.result-box p {
+    margin: 0;
+    font-size: 1em;
+}

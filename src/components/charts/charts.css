@@ -1,0 +1,75 @@
+.chartCardTop {
+    border-radius: 1em;
+    width: 30vw;
+    height: 40vw;
+    background-color: rgb(164, 201, 255);
+    margin: 1em;
+    box-sizing: border-box;
+    text-align: left;
+padding: 1em;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+.chartCardBottom {
+    border-radius: 1em;
+    width: 30vw;
+    height: 40vw;
+    background-color: rgb(255, 174, 174);
+    margin: 1em;
+    box-sizing: border-box;
+    text-align: left;
+padding: 1em;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+.chartCardTop img {
+    width: 70%;
+    height: 50%; 
+    margin: 0.5em;
+}
+.chartCardBottom img {
+    width: 70%;
+    height: 50%; 
+    margin: 0.5em;
+}
+.chartCardTop p{
+    font-size: 1em;
+    margin: 0;
+}
+.chartCardBottom p{
+    font-size: 1em;
+    margin: 0;
+}
+.chartCardTop h2{
+    font-size: 2em;
+    margin: 0;
+}
+.chartCardBottom h{
+    font-size: 2em;
+    margin: 0;
+}
+.chartsWrapper{
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.topList {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.bottomList {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}

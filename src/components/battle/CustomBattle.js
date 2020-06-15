@@ -13,7 +13,6 @@ const Battle = () => {
     const { id1, id2 } = useParams();
 
     useEffect(() => {
-        console.log("hje")
         setHamsters();
     }, [])
     async function setHamsters() {
@@ -49,6 +48,25 @@ const Battle = () => {
             },
             method: 'PUT'
         })
+        let postGameUrl = "http://localhost:4000/games/";
+
+        let post = await fetch(postGameUrl,
+            {
+                method: 'POST',
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    'authorization': 'AIzaSyAHFQEHkjdigK1SGrYLAxpKNiEG4j9pmKs'
+                }),
+                body: JSON.stringify(
+                    {
+                        contestants: [winner, loser],
+                        winner: winner
+                    }
+                )
+            })
+
+        const content = await post.json()
+        console.log(content)
         let resWinnerJson = await updateWinnerDb.json()
 
         let updateLoserDb = await fetch(loserUrl, {
@@ -60,7 +78,6 @@ const Battle = () => {
         let resLoserJson = await updateLoserDb.json()
         setWinningHamster(winner.name)
         setHamsters();
-        console.log(resWinnerJson, resLoserJson)
     }
 
     return (

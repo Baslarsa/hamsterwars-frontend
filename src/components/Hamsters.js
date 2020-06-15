@@ -26,6 +26,7 @@ let Hamsters = () => {
         for (let hamster of hamsters) {
             objects.push(
                 <Fighter
+                    key={hamster.id}
                     name={hamster.name}
                     age={hamster.age}
                     imgName={hamster.imgName}
@@ -39,14 +40,16 @@ let Hamsters = () => {
         return objects
     }
     return (
-        <div class="wrapper">
-            <h1>Check out all the sweet hamsterz on this page!</h1>
-            <div className="wallOfFame">
-                {
-                    isLoaded
-                        ? renderHamsters()
-                        : "Loading"
-                }
+        <div className="wrapper">
+            <div >
+                <h1>Check out all the sweet hamsterz on this page!</h1>
+                <div className="wallOfFame">
+                    {
+                        isLoaded
+                            ? renderHamsters()
+                            : "Loading"
+                    }
+                </div>
             </div>
         </div>
     )
