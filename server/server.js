@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 2048;   // RÄTT
+const port = process.env.PORT || 4000;   // RÄTT
 
 require('dotenv').config()
 
@@ -28,19 +28,19 @@ app.use((req, res, next) => {
 
 //Set routes
 const assetsRoute = require('./routes/assets')
-app.use('/assets', assetsRoute)
+app.use('/api/assets', assetsRoute)
 
 const hamstersRoute = require('./routes/hamsters')
-app.use('/hamsters', hamstersRoute);
+app.use('/api/hamsters', hamstersRoute);
 
 const chartsRoute = require('./routes/charts')
-app.use('/charts', chartsRoute);
+app.use('/api/charts', chartsRoute);
 
 const gamesRoute = require('./routes/games')
-app.use('/games', gamesRoute);
+app.use('/api/games', gamesRoute);
 
 const statsRoute = require('./routes/stats')
-app.use('/stats', statsRoute);
+app.use('/api/stats', statsRoute);
 
 
 //Sätt på öronen
