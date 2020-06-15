@@ -40,10 +40,10 @@ const CustomBattle = (props) => {
         setTimeout(setShowPopup, 5000);
     }
     async function handleVoteClick(winner, loser) {
-        let winnerUrl = `http://localhost:4000/hamsters/${winner.id}/win`
-        let loserUrl = `http://localhost:4000/hamsters/${loser.id}/defeat`
+        let winnerUrl = `http://localhost:4000/api/hamsters/${winner.id}/win`
+        let loserUrl = `http://localhost:4000/api/hamsters/${loser.id}/defeat`
         //Update Hamsters DB
-        let postGameUrl = "http://localhost:4000/games/";
+        let postGameUrl = "http://localhost:4000/api/games/";
 
         let post = await fetch(postGameUrl,
             {

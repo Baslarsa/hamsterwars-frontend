@@ -16,8 +16,8 @@ const Battle = () => {
         setHamsters();
     }, [])
     async function setHamsters() {
-        const url1 = `http://localhost:4000/hamsters/${id1}`;
-        const url2 = `http://localhost:4000/hamsters/${id2}`;
+        const url1 = `http://localhost:4000/api/hamsters/${id1}`;
+        const url2 = `http://localhost:4000/api/hamsters/${id2}`;
 
         const getHamsterOne = await fetch(url1, {
             headers: {
@@ -39,8 +39,8 @@ const Battle = () => {
     }
 
     async function handleVoteClick(winner, loser) {
-        let winnerUrl = `http://localhost:4000/hamsters/${winner.id}/win`
-        let loserUrl = `http://localhost:4000/hamsters/${loser.id}/defeat`
+        let winnerUrl = `http://localhost:4000/api/hamsters/${winner.id}/win`
+        let loserUrl = `http://localhost:4000/api/hamsters/${loser.id}/defeat`
 
         let updateWinnerDb = await fetch(winnerUrl, {
             headers: {
