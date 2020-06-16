@@ -8,6 +8,7 @@ require('dotenv').config()
 app.use(cors()); //Förhindra problem med CORS
 app.use(express.json());
 app.use(express.static(__dirname + './../build'));
+console.log(__dirname + '/../build');
 
 //Authorize med API KEY
 app.use((req, res, next) => {

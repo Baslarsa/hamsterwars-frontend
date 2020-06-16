@@ -79,10 +79,10 @@ const CustomBattle = (props) => {
         let resLoserJson = await updateLoserDb.json()
         //Update recent games
 
-        popUp();
         setWinningHamster(winner)
         setLosingHamster(loser)
         setHamsters();
+        popUp();
     }
 
     return (
