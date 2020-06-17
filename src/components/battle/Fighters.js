@@ -40,8 +40,6 @@ const Fighter = (props) => {
             <p>Favorite food: {props.favFood}</p>
         </article >
     )
-
-
 }
 
 
