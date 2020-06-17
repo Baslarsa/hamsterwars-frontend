@@ -17,6 +17,7 @@ const Fighter = (props) => {
             signal: signal
         }
         const loadImg = async () => {
+            console.log("Fighters: fetching img")
             await fetch(url, headers)
                 .then(response => response.blob())
                 .then(images =>
