@@ -8,7 +8,6 @@ let Hamsters = () => {
     useEffect(() => {
         async function getHamsters() {
             let url = '/api/hamsters/'
-            console.log("Hamsters: fetching hamsters")
             let hamsterData = await fetch(url, {
                 headers: {
                     authorization: 'AIzaSyAHFQEHkjdigK1SGrYLAxpKNiEG4j9pmKs'

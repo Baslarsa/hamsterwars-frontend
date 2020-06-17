@@ -37,7 +37,7 @@ const CustomBattle = (props) => {
     }
     function popUp() {
         setShowPopUp(true);
-        setTimeout(setShowPopUp, 5000);
+        setTimeout(setShowPopUp, 3000);
     }
     async function handleVoteClick(winner, loser) {
         let winnerUrl = `/api/hamsters/${winner.id}/win`
@@ -87,7 +87,7 @@ const CustomBattle = (props) => {
 
     return (
         <>
-            <button onClick={setHamsters}>Randomize a battle</button>
+            <button className="randomButton" onClick={setHamsters}>Randomize a battle</button>
             {
                 winningHamster && showPopUp
                     ? <BattleResult winner={winningHamster} loser={losingHamster} />
@@ -123,8 +123,7 @@ const CustomBattle = (props) => {
                                 id={hamsterTwo.id} />
                         </div>
                     </div>
-                    :
-                    <p>Let's get ready to fight!</p>
+                    : <p></p>
             }
         </>
     );

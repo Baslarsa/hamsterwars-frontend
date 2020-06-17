@@ -1,28 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Odibee+Sans&family=Staatliches&display=swap');
+:root {
+    --mainBg: rgb(255, 255, 255);
+    --secondaryBg: rgb(29, 150, 248);
+    --metalFont: 'Metal Mania', cursive;
+--odibee: 'Odibee Sans', cursive;
+--staat: 'Staatliches', cursive;
+--roboto: 'Roboto';
+}
+
 .description {
     width: 100%;
     text-align: center;
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
 }
-
-img {
-    align-self: center;
-    width: 25vh;
-    height: 25vh;
-    border-radius: 50%;
+.bold {
+    font-weight: bold;
 }
 .fighter {
-    border: 1px solid black;
-    background-color: black;
-    color: white;
-    border-radius: 1em;;
+    font-size: 1.2em;
+    border-radius: 1em;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-   width: 40vw;
-   padding: 1em;
-   margin: 1em;
-   text-align: left;
-   box-sizing: border-box;
+    align-items: center;
+    width: 30vw;
+    height: 40vw;
+    background-color: rgba(255, 0, 0, 0.288);
+    padding: 1em;
+    margin: 1em;
+}
+.fighter img {
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+.buttonList {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-box {
+    font-size: 0.6em;
+    width: 70%;
+    align-self: flex-start;
+    text-align: left;
+    height: 100%;
+    margin-bottom: 1em;
+    box-sizing: border-box;
 }
 .battle-cage {
     width: 100%;
@@ -34,32 +69,37 @@ img {
     box-sizing: border-box;
 
 }
-button {
-    color: white;
-    height: 3em;
-    width: 10em;
+.randomButton {
+    font-family: var(--staat);
+    font-size: 1em;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 1em auto 1em auto;
+    color: rgb(0, 0, 0);
+    height: 5em;
+    width: 12em;
     align-self: center;
-    border-radius: 1.5em;
-    border: 1px solid white;
+    border-radius: 2.5em;
+    border: 1px solid rgb(0, 0, 0);
     outline: none;
-    margin: 1em;
-    background-color: rgb(29, 150, 248);
-    font-family: arial;
+    background-color: rgba(87, 255, 255, 0.842);
 }
+
 .vote-button {
-    height: 3em;
+    height: 4em;
     width: 10em;
     align-self: center;
-    border-radius: 1.5em;
+    border-radius: 2em;
     outline: none;
     margin: 1em;
-    background-color: rgb(29, 150, 248);
+    background-color: rgb(224, 0, 138);
 }
 .battle-cage h1 {
     align-self: center;
 }
 .hamsterCard {
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.137);
     border-radius: 1em;
     display: flex;
     flex-direction: column;
@@ -68,12 +108,18 @@ button {
    margin: 1em;
    text-align: left;
    box-sizing: border-box;
+   background-color: rgba(73, 117, 236, 0.705);
+   -webkit-box-shadow: 10px 10px 12px 1px rgba(0,0,0,0.38);
+-moz-box-shadow: 10px 10px 12px 1px rgba(0,0,0,0.38);
+box-shadow: 10px 10px 12px 1px rgba(0,0,0,0.38);
 }
 .hamsterCard img {
-    align-self: center;
-    width: 25vh;
-    height: 25vh;
-    border-radius: 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 60%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    opacity: 0.8;
 }
 .wallOfFame {
 width: 100vw;

@@ -1,32 +1,36 @@
 .result-box {
     box-sizing: border-box;
     padding: 1em;
+    border-radius: 1em;
     width: 20em;
+    border: 1px solid black;
     height: 8em;
-    background-color: rgb(29, 150, 248);
-    color: white;
+    background-color: rgba(87, 255, 255, 0.842);
+    color: rgb(0, 0, 0);
     position: absolute;
-    bottom: -8em;
+    top: 0em;
+    left: -20em;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    animation: popUp 5s ease-in-out;
+    animation: popUp 3s ease-in-out;
+    opacity: 0.9;
 }
 @keyframes popUp {
     0% {
-        bottom:-8em;
+        left:-20em;
     }
     25% {
-        bottom: 0;
+        left: 0;
     }
     40% {
-        bottom: 0;
+        left: 0;
     }
     70% {
-        bottom: 0;
+        left: 0;
     }
     100% {
-        bottom: -8em;
+        left: -20em;
     }
 }
 

@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Odibee+Sans&family=Staatliches&display=swap');
 :root {
-    --mainBg: rgb(219, 219, 219);
+    --mainBg: rgb(255, 255, 255);
     --secondaryBg: rgb(29, 150, 248);
-    --primaryFont: 'Roboto', sans-serif;
-
+    --metalFont: 'Metal Mania', cursive;
+--odibee: 'Odibee Sans', cursive;
+--staat: 'Staatliches', cursive;
+--roboto: 'Roboto';
 }
 
 .App {
@@ -12,9 +15,9 @@
 }
 header h1 {
     margin: 0;
-    font-size: 2em;
-    font-family: var(--primaryFont);
-    color: white;
+    font-size: 3em;
+    font-family: var(--staat);
+    color: rgba(87, 255, 255, 0.842);
     letter-spacing: 1em;
     text-decoration: underline;
 }
@@ -25,8 +28,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondaryBg)
-}
+    background: linear-gradient(180deg, rgba(46,125,147,1) 0%, rgba(0,75,155,1) 60%, rgb(56, 125, 255) 100%);}
 main {
     box-sizing: border-box;
     text-align: center;
@@ -42,11 +44,14 @@ main {
     align-self: center;
     flex-direction: row;
     justify-content: center;
-    background-color: var(--secondaryBg)
+    background-color: rgb(56, 125, 255);
 }
 .nav a {
     border-radius: 1em 1em 0 0;
     text-decoration: none;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
     color: rgb(0, 0, 0);
     font-family: arial;
     font-weight: bold;
@@ -60,16 +65,29 @@ main {
 .active {
     background-color: var(--mainBg);
 }
-
+.primary {
+    font-family: var(--odibee);
+}
 .leader-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-radius: 2em;;
-    font-family: var(--primaryFont);
     font-weight: 300;
-    padding: 1em;
-    color: white;
+    padding: 3em;
+    color: rgb(0, 0, 0);
     box-sizing: border-box;
-    width: 50%;
-    background-color: rgba(0, 0, 0, 0.288);
+    width: 50vw;
+}
+.leader-frame img {
+    object-fit: cover;
+    width: 100%;
+    height: 80%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+    border-radius: 5em;
+    text-align: left;
 }
 .upload-form {
     padding: 1em;
@@ -96,6 +114,7 @@ min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     height: 60vh;
     width: 100%;
     box-sizing: border-box;
@@ -105,21 +124,48 @@ min-height: 85vh;
     margin: 0;
 }
 .title-box {
-    padding: 1em;
     box-sizing: border-box;
     margin-bottom: 1em;
-    width: 30%;
+    width: 50vw;
+    padding: 3em;
+    text-align: left;
+}
+.text-box {
+    padding-left: 1em;
 }
 .main-container {
     width: 100vw;
+    padding: 0em 3em 0em 3em;
     min-height: 80vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+};
 
-}
 p {
+    font-family: var(--roboto);
     margin: 0;
+}
+h1 {
+    font-family: var(--odibee);
+    font-size: 4em;
+}
+h2 {
+    font-family: var(--odibee);
+    font-size: 2em;
+}
+
+input.valid {
+    border: 1px solid #5BBE36;
+    border-radius: 2px;
+}
+input.invalid {
+    border: 1px solid #DD2626;
+    border-radius: 2px;
+}
+.error {
+    color: #DD2626;
+    position: absolute;
 }

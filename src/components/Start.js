@@ -28,7 +28,7 @@ let Start = () => {
                     <p>Choose from the menu above!</p>
                 </div>
                 <div className="leader-frame">
-                    <h1>Currently cutest hamster</h1>
+                    <h2>Currently cutest hamster</h2>
                     <Fighter
                         name={topHamster.name}
                         age={topHamster.age}

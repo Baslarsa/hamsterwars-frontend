@@ -17,7 +17,7 @@ const Fighter = (props) => {
             signal: signal
         }
         const loadImg = async () => {
-            console.log("Fighters: fetching img")
+
             await fetch(url, headers)
                 .then(response => response.blob())
                 .then(images =>
@@ -25,7 +25,7 @@ const Fighter = (props) => {
                     ))
         }
         loadImg()
-        console.log(props);
+
         return function cleanup() {
             abortController.abort()
         }
@@ -34,10 +34,12 @@ const Fighter = (props) => {
     return (
         <article className={props.class}>
             <img alt="hamster" src={imgUrl} />
-            <p>Name: {props.name}</p>
-            <p>Age: {props.age}</p>
-            <p>Likes to: {props.loves}</p>
-            <p>Favorite food: {props.favFood}</p>
+            <div className="text-box">
+                <p><span className="bold">Name:</span> {props.name}</p>
+                <p><span className="bold">Age:</span> {props.age}</p>
+                <p><span className="bold">Likes to:</span> {props.loves}</p>
+                <p><span className="bold">Favorite food:</span> {props.favFood}</p>
+            </div>
         </article >
     )
 }
