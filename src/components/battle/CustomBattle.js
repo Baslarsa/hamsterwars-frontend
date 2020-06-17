@@ -16,8 +16,8 @@ const Battle = () => {
         setHamsters();
     }, [])
     async function setHamsters() {
-        const url1 = `http://localhost:4000/api/hamsters/${id1}`;
-        const url2 = `http://localhost:4000/api/hamsters/${id2}`;
+        const url1 = `/api/hamsters/${id1}`;
+        const url2 = `/api/hamsters/${id2}`;
 
         const getHamsterOne = await fetch(url1, {
             headers: {

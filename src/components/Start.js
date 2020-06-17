@@ -5,7 +5,7 @@ let Start = () => {
     const [topHamster, setTopHamster] = useState([]);
     useEffect(() => {
         async function getTopHamster() {
-            let topUrl = 'http://localhost:4000/api/charts/top'
+            let topUrl = '/api/charts/top'
 
             const getTopFive = await fetch(topUrl, {
                 method: "GET",

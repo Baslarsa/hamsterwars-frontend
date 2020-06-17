@@ -13,7 +13,7 @@ const CustomBattle = (props) => {
     const [showPopUp, setShowPopUp] = useState(false);
 
     async function setHamsters() {
-        const url = 'http://localhost:4000/api/hamsters/random';
+        const url = '/api/hamsters/random';
 
         const getRandomHamsterOne = await fetch(url, {
             headers: {
@@ -40,10 +40,10 @@ const CustomBattle = (props) => {
         setTimeout(setShowPopUp, 5000);
     }
     async function handleVoteClick(winner, loser) {
-        let winnerUrl = `http://localhost:4000/api/hamsters/${winner.id}/win`
-        let loserUrl = `http://localhost:4000/api/hamsters/${loser.id}/defeat`
+        let winnerUrl = `/api/hamsters/${winner.id}/win`
+        let loserUrl = `/api/hamsters/${loser.id}/defeat`
         //Update Hamsters DB
-        let postGameUrl = "http://localhost:4000/api/games/";
+        let postGameUrl = "/api/games/";
 
         let post = await fetch(postGameUrl,
             {

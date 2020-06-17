@@ -8,8 +8,8 @@ let Charts = () => {
     const [bottomList, setBottomList] = useState([])
     useEffect(() => {
         async function getTopBottomFive() {
-            let topUrl = 'http://localhost:4000/api/charts/top'
-            let bottomUrl = 'http://localhost:4000/api/charts/bottom'
+            let topUrl = '/api/charts/top'
+            let bottomUrl = '/api/charts/bottom'
 
             const getTopFive = await fetch(topUrl, {
                 method: "GET",

@@ -7,7 +7,7 @@ const Fighter = (props) => {
     const [imgUrl, setImgUrl] = useState("");
 
     useEffect(() => {
-        let url = `http://localhost:4000/api/assets/${props.imgName}`
+        let url = `/api/assets/${props.imgName}`
         let headers = {
             headers: {
                 authorization: "AIzaSyAHFQEHkjdigK1SGrYLAxpKNiEG4j9pmKs"

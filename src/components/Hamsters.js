@@ -7,7 +7,7 @@ let Hamsters = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
         async function getHamsters() {
-            let url = 'http://localhost:4000/api/hamsters/'
+            let url = '/api/hamsters/'
             console.log("Hamsters: fetching hamsters")
             let hamsterData = await fetch(url, {
                 headers: {

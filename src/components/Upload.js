@@ -22,7 +22,7 @@ const Upload = () => {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:4000/api/hamsters", requestOptions)
+        fetch("/api/hamsters", requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
