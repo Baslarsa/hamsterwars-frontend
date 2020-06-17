@@ -1,0 +1,8 @@
+Länk Heroku: https://hamsterwars-iths.herokuapp.com/
+Länk Github: https://github.com/iths-david-larsson/hamsterwars-frontend
+
+Vågade inte ändra projektnamnet till "fullstack" ifall att något skulle pajja.
+Så det fick fortsätta heta hamsterwars-frontend. Du kanske kan leva med det om jag har tur. 
+Blev ingen "matchup"-route då jag kände att det var onödigt. Blev en resultatflagga som dyker upp efter varje battle istället. 
+
+Min uppfattning är att jag pendlar mellan betyg G och VG på denna då jag fått med några av bonus-punkterna. Upp till dig att avgöra.
