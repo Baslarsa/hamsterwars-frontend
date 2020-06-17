@@ -9,7 +9,7 @@ const Fighter = (props) => {
     useEffect(() => {
         const abortController = new AbortController();
         const signal = abortController.signal;
-        let url = `http://localhost:4000/api/assets/${props.imgName}`
+        let url = `/api/assets/${props.imgName}`
         let headers = {
             headers: {
                 authorization: "AIzaSyAHFQEHkjdigK1SGrYLAxpKNiEG4j9pmKs"

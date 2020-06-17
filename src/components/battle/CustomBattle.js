@@ -39,8 +39,8 @@ const Battle = () => {
     }
 
     async function handleVoteClick(winner, loser) {
-        let winnerUrl = `http://localhost:4000/api/hamsters/${winner.id}/win`
-        let loserUrl = `http://localhost:4000/api/hamsters/${loser.id}/defeat`
+        let winnerUrl = `/api/hamsters/${winner.id}/win`
+        let loserUrl = `/api/hamsters/${loser.id}/defeat`
 
         let updateWinnerDb = await fetch(winnerUrl, {
             headers: {
@@ -48,7 +48,7 @@ const Battle = () => {
             },
             method: 'PUT'
         })
-        let postGameUrl = "http://localhost:4000/api/games/";
+        let postGameUrl = "/api/games/";
 
         let post = await fetch(postGameUrl,
             {
