@@ -10,7 +10,7 @@ const CustomBattle = (props) => {
     const [isHamstersSet, setIsHamstersSet] = useState(false);
     const [winningHamster, setWinningHamster] = useState("");
     const [losingHamster, setLosingHamster] = useState("");
-    const [showPopUp, setShowPopup] = useState(false);
+    const [showPopUp, setShowPopUp] = useState(false);
 
     async function setHamsters() {
         const url = 'http://localhost:4000/api/hamsters/random';
@@ -36,8 +36,8 @@ const CustomBattle = (props) => {
         setIsHamstersSet(true)
     }
     function popUp() {
-        setShowPopup(true);
-        setTimeout(setShowPopup, 5000);
+        setShowPopUp(true);
+        setTimeout(setShowPopUp, 5000);
     }
     async function handleVoteClick(winner, loser) {
         let winnerUrl = `http://localhost:4000/api/hamsters/${winner.id}/win`

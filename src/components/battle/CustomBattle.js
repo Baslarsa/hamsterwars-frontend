@@ -48,7 +48,7 @@ const Battle = () => {
             },
             method: 'PUT'
         })
-        let postGameUrl = "http://localhost:4000/games/";
+        let postGameUrl = "http://localhost:4000/api/games/";
 
         let post = await fetch(postGameUrl,
             {

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './charts.css'
-import Charts from './Charts';
 
 
 

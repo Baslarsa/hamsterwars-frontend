@@ -7,11 +7,14 @@ const Fighter = (props) => {
     const [imgUrl, setImgUrl] = useState("");
 
     useEffect(() => {
+        const abortController = new AbortController();
+        const signal = abortController.signal;
         let url = `http://localhost:4000/api/assets/${props.imgName}`
         let headers = {
             headers: {
                 authorization: "AIzaSyAHFQEHkjdigK1SGrYLAxpKNiEG4j9pmKs"
-            }
+            },
+            signal: signal
         }
         const loadImg = async () => {
             await fetch(url, headers)
@@ -21,6 +24,10 @@ const Fighter = (props) => {
                     ))
         }
         loadImg()
+        console.log(props);
+        return function cleanup() {
+            abortController.abort()
+        }
     }, [props])
 
     return (

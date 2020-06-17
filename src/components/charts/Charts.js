@@ -69,7 +69,6 @@ let Charts = () => {
                     id={hamster.id}
                     leaderBoard="Defeats"
                     stat={hamster.defeats}
-                    class="chartCardTop"
                     class="chartCardBottom"
                 />
             )

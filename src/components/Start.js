@@ -19,7 +19,6 @@ let Start = () => {
         getTopHamster();
     }, [])
 
-
     return (
         <>
             <div className="main-container">
