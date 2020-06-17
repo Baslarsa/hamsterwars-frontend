@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 4000;   // RÄTT
+const path = require('path');
 
 require('dotenv').config()
 
@@ -42,6 +43,10 @@ app.use('/api/games', gamesRoute);
 
 const statsRoute = require('./routes/stats')
 app.use('/api/stats', statsRoute);
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/../build/index.html'))
+})
 
 
 //Sätt på öronen

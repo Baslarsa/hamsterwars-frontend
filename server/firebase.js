@@ -16,11 +16,6 @@ admin.initializeApp({
     databaseURL: process.env.DB_URL,
     storageBucket: process.env.STORAGE_BUCKET
 
-
-
-
-
-
 });
 
 const db = admin.firestore();
